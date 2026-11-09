@@ -28,6 +28,8 @@ Erlaube dem verwendeten Terminal bzw. Python unter **Systemeinstellungen → Dat
 
 Die lokale Erkennung verwendet auf dem Mac die CPU. Alternativ kannst du Groq aktivieren. Die Mac-Anzeige hat einen Aufnahme-Button und ein Menü; Windows-Autostart und Windows-Verknüpfungen gibt es dort nicht. Der erste lokale Start lädt das Sprachmodell herunter.
 
+Zum Diktieren hältst du auf dem Mac standardmäßig die **rechte Umschalttaste** gedrückt und lässt sie anschließend los. Wähle bei langsamer lokaler Erkennung in den Einstellungen ein kleineres Modell, etwa `base`.
+
 ## Installation mit Codex oder Claude Code
 
 Du kannst deinem KI-Assistenten stattdessen diesen Auftrag geben:

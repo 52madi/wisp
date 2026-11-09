@@ -5,7 +5,6 @@ wisp.py --settings   -> öffnet das Einstellungsfenster
 """
 import ctypes
 import gc
-import ctypes.wintypes as wt
 import json
 import math
 import os
@@ -15,10 +14,9 @@ import sys
 import threading
 import time
 import tkinter as tk
-from collections import deque
 
 import numpy as np
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image
 
 from platform_support import data_dir, open_file, single_instance, IS_MAC
 import cloud
@@ -52,7 +50,7 @@ QUICK_LANGUAGES = ["Deutsch", "Englisch", "Automatisch"]
 HOTKEY_NAMES = ["Rechte Strg", "Rechte Alt (AltGr)", "Rechte Umschalt", "F8", "F9"]
 HALLUCINATIONS = ("untertitel", "amara.org", "vielen dank fürs zuschauen", "thanks for watching")
 DEFAULTS = {"model": "turbo", "language": "Deutsch", "device": "Auto",
-            "hotkey": "Rechte Strg", "paste": True, "smart": True,
+            "hotkey": "Rechte Umschalt" if IS_MAC else "Rechte Strg", "paste": True, "smart": True,
             "clipboard": False, "cloud": False, "cloud_modell": cloud.MODELL, "ki": False, "ki_anbieter": "openrouter", "history": False}
 
 
