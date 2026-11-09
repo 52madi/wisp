@@ -4,10 +4,11 @@ Datei: WISP-Datenordner (APPDATA/WISP/ersetzungen.txt), eine Regel pro Zeile:  f
 Zeilen mit # sind Kommentare. Es wird ohne Beachtung der Groß-/Kleinschreibung und nur an
 Wortgrenzen ersetzt; Leerzeichen und Bindestrich im Suchtext passen auf beides.
 """
+from platform_support import data_dir
 import os
 import re
 
-DATEI = os.path.join(os.environ.get("APPDATA", ""), "WISP", "ersetzungen.txt")
+DATEI = str(data_dir() / "ersetzungen.txt")
 
 
 def lade(pfad=DATEI):

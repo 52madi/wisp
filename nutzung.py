@@ -4,11 +4,12 @@ Die Zählung ist von WISP selbst (nicht aus der Groq-Konsole) und deshalb eine S
 Nutzung außerhalb von WISP (z. B. Playground) taucht hier nicht auf.
 Pro Diktat wird eine Zeile angehängt; die Statistik-Seite liest die Datei nur beim Öffnen.
 """
+from platform_support import data_dir
 import json
 import os
 import time
 
-PFAD = os.path.join(os.environ.get("APPDATA", ""), "WISP", "nutzung.jsonl")
+PFAD = str(data_dir() / "nutzung.jsonl")
 
 # Groq-Limits für Whisper im Free-Tarif (siehe Groq-Konsole: Organization -> Limits)
 LIMIT_AUDIO_TAG = 28800

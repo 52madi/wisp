@@ -6,6 +6,7 @@ unplausibler Antwort bleibt der Regeltext.
 
 Der API-Schlüssel kommt ausschließlich aus einer Umgebungsvariable (siehe ANBIETER).
 """
+from platform_support import data_dir
 import json
 import os
 import re
@@ -48,7 +49,7 @@ SYSTEM = (
 
 letzte_tokens = 0       # Tokens des letzten korrigiere()-Aufrufs (für die Nutzungsstatistik)
 
-SCHLUESSEL_DATEI = os.path.join(os.environ.get("APPDATA", ""), "WISP", "schluessel.txt")
+SCHLUESSEL_DATEI = str(data_dir() / "schluessel.txt")
 
 
 def schluessel(key_env):
@@ -71,6 +72,8 @@ def schluessel(key_env):
 def speichere_schluessel(key_env, wert):
     """Speichert oder aktualisiert einen API-Schlüssel in schluessel.txt."""
     wert = (wert or "").strip()
+    if key_env not in {"GROQ_API_KEY", "OPENROUTER_API_KEY"} or "\n" in wert or "\r" in wert:
+        raise ValueError("Ungültiger Schlüsselname oder mehrzeiliger Schlüssel")
     zeilen = []
     gefunden = False
     try:
@@ -88,7 +91,10 @@ def speichere_schluessel(key_env, wert):
     if not gefunden and wert:
         zeilen.append(f"{key_env}={wert}")
     os.makedirs(os.path.dirname(SCHLUESSEL_DATEI), exist_ok=True)
-    with open(SCHLUESSEL_DATEI, "w", encoding="utf-8") as f:
+    fd = os.open(SCHLUESSEL_DATEI, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+    if os.name != "nt":
+        os.fchmod(fd, 0o600)
+    with os.fdopen(fd, "w", encoding="utf-8") as f:
         f.write("\n".join(zeilen) + ("\n" if zeilen else ""))
 
 

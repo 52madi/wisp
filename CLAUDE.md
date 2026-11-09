@@ -2,6 +2,11 @@
 
 When a user asks you to download, install, configure, or start **WISP**, follow these exact steps so the installation runs smoothly without hanging on interactive prompts.
 
+## macOS installation
+On macOS, use Python 3.10+ from python.org with Tk support. Run `bash INSTALLIEREN.command`, then `bash "WISP starten.command"` or `bash "WISP Einstellungen.command"`. Use `.venv/bin/python` for tests. Local inference uses CPU; NVIDIA packages are Windows-only. Ask the user to grant microphone, Accessibility and (if requested by macOS) Input Monitoring permissions to the launching Terminal/Python application and restart WISP. Store personal files in `~/Library/Application Support/WISP`, outside the checkout. macOS support still needs a real-device UI test.
+
+The following installation commands apply to Windows only.
+
 ## 1. System Requirements
 - **OS:** Windows 10 or Windows 11 (uses Win32 layered windows and Windows shortcuts).
 - **Python:** Python 3.10+ (`python --version`).

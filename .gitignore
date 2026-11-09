@@ -12,3 +12,11 @@ schluessel.txt
 settings.json
 history.json
 nutzung.jsonl
+WISP/
+.env
+.env.*
+*.wav
+*.mp3
+*.m4a
+*.lock
+.DS_Store

@@ -37,6 +37,7 @@ echo  Kopiere WISP nach "%ZIEL%"...
 
 REM Programm-Dateien
 for %%f in ("wisp.py" "cloud.py" "ersetzungen.py" "ki.py" "nutzung.py" "postprocess.py" ^
+            "platform_support.py" "pill_windows.py" "pill_macos.py" ^
             "requirements.txt" "requirements-gpu.txt" "INSTALLIEREN.bat" ^
             "WISP starten.bat" "WISP Einstellungen.bat" "setup_app.py" "STAND.md" ^
             "README.md" "CLAUDE.md" "AGENTS.md") do (

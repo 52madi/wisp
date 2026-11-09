@@ -6,6 +6,7 @@ Exception, der Aufrufer fällt dann auf das lokale Modell zurück.
 
 Der API-Schlüssel kommt wie bei ki.py aus GROQ_API_KEY oder schluessel.txt.
 """
+from platform_support import data_dir
 import io
 import os
 import re
@@ -20,7 +21,7 @@ import ki
 URL = "https://api.groq.com/openai/v1/audio/transcriptions"
 MODELL = "whisper-large-v3"        # wie lokal; "whisper-large-v3-turbo" ist schneller und billiger
 MODELLE = ["whisper-large-v3", "whisper-large-v3-turbo"]
-WOERTER_DATEI = os.path.join(os.environ.get("APPDATA", ""), "WISP", "woerter.txt")
+WOERTER_DATEI = str(data_dir() / "woerter.txt")
 KEY_ENV = "GROQ_API_KEY"
 letzte_limits = {}      # Rate-Limit-Angaben aus der letzten Groq-Antwort: {"limit": 2000, "rest": 1998}
 

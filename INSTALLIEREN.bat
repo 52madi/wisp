@@ -55,11 +55,6 @@ if errorlevel 1 goto :fehler
 
 REM ---- 4. GPU? ----------------------------------------------------------
 if "%AUTO%"=="1" (
-    where nvidia-smi >nul 2>&1
-    if not errorlevel 1 (
-        echo  NVIDIA-GPU erkannt - lade CUDA-Unterstuetzung ^(~1 GB^)...
-        .venv\Scripts\python.exe -m pip install -r requirements-gpu.txt --quiet
-    )
     goto :keine_gpu
 )
 echo.

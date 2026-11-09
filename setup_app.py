@@ -24,11 +24,13 @@ def desktop():
 
 
 def shortcut(path, args, description):
+    def quote(value):
+        return str(value).replace("'", "''")
     ps = (
         "$s=(New-Object -ComObject WScript.Shell).CreateShortcut('%s');"
         "$s.TargetPath='%s';$s.Arguments='%s';$s.WorkingDirectory='%s';"
         "$s.IconLocation='%s';$s.Description='%s';$s.Save()"
-    ) % (path, PYW, args, APP_DIR, ICON, description)
+    ) % tuple(quote(v) for v in (path, PYW, args, APP_DIR, ICON, description))
     subprocess.run(["powershell", "-NoProfile", "-Command", ps], check=True)
 
 
