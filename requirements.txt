@@ -1,0 +1,8 @@
+faster-whisper
+av>=14,<17
+sounddevice
+numpy
+customtkinter
+pynput
+pillow
+pystray

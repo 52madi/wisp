@@ -1,0 +1,14 @@
+# Python & Umgebung
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Lokale Daten & Entwürfe
+mascot/
+*.log
+schluessel.txt
+settings.json
+history.json
+nutzung.jsonl

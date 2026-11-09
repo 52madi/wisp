@@ -1,0 +1,19 @@
+[
+  {"roh": "Wir treffen uns am Dienstag, nein, ich meinte Mittwoch.", "soll": "Wir treffen uns am Mittwoch."},
+  {"roh": "Das Meeting ist um 14 Uhr, nein, 15 Uhr.", "soll": "Das Meeting ist um 15 Uhr."},
+  {"roh": "Das Auto ist rot und schnell, nein, ich meinte nicht rot, sondern blau.", "soll": "Das Auto ist blau und schnell."},
+  {"roh": "Das Projekt ist ein Desaster. Ich meinte das nicht so, sondern: Das Projekt hat Potenzial.", "soll": "Das Projekt hat Potenzial."},
+  {"roh": "Ich komme morgen. Vergiss das. Ich komme heute.", "soll": "Ich komme heute."},
+  {"roh": "Am Montag, nein, ich meinte Dienstag, um 9 Uhr, nein, ich meinte 10 Uhr.", "soll": "Am Dienstag, um 10 Uhr."},
+  {"roh": "Let's meet on Tuesday, no wait, Wednesday.", "soll": "Let's meet on Wednesday."},
+  {"roh": "Ähm, ich glaube, äh, das passt.", "soll": "Ich glaube, das passt."},
+  {"roh": "Einkaufen. Neuer Stichpunkt. Milch. Neuer Stichpunkt. Brot. Neuer Stichpunkt. Eier.", "soll": "Einkaufen:\n- Milch\n- Brot\n- Eier"},
+  {"roh": "Stichpunkte Milch neuer Stichpunkt Brot nein ich meinte Butter neuer Stichpunkt Eier", "soll": "- Milch\n- Butter\n- Eier"},
+  {"roh": "Hallo Peter neue Zeile Wie geht es dir neuer Absatz Viele Grüße", "soll": "Hallo Peter\nWie geht es dir\n\nViele Grüße"},
+  {"roh": "Ich glaube die Sitzung ist morgen, also eigentlich übermorgen, besser gesagt Freitag.", "soll": "Ich glaube die Sitzung ist Freitag."},
+  {"roh": "Schick Herrn Müller die Unterlagen, oder besser gesagt an Frau Schmidt.", "soll": "Schick Frau Schmidt die Unterlagen."},
+  {"roh": "Wir brauchen drei Stühle, nein, vier, und einen Tisch.", "soll": "Wir brauchen vier Stühle und einen Tisch."},
+  {"roh": "Ich meine, das ist eine gute Idee.", "soll": "Ich meine, das ist eine gute Idee."},
+  {"roh": "Kommst du morgen? Nein, ich bleibe zu Hause.", "soll": "Kommst du morgen? Nein, ich bleibe zu Hause."},
+  {"roh": "Die Stichpunkte sind klar und die Zahlen stimmen.", "soll": "Die Stichpunkte sind klar und die Zahlen stimmen."}
+]
